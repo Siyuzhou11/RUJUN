@@ -4,39 +4,41 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Home — Rujun (Rhea) Gao</title>
-  <meta name="description" content="Research homepage of Rujun (Rhea) Gao — GAI/LLM/NLP/Machine Learning/Data Analyst">
+  <meta name="description" content="Research homepage of Rujun (Rhea) Gao">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .nav-link { padding: .5rem .75rem; border-radius: .5rem; }
-    .nav-link:hover { opacity: .7; }
-    .card { background:#fff; border:1px solid #e5e7eb; border-radius: .75rem; }
-    .chip { display:inline-block; border:1px solid #e5e7eb; border-radius:999px; padding:.25rem .75rem; font-size:.875rem; }
-    .prose p { line-height: 1.75; }
-    .muted { color:#6b7280; }
+    .nav-link{padding:.5rem .75rem;border-radius:.5rem}
+    .nav-link:hover{opacity:.7}
+    .nav-active{background:#f3f4f6}
+    .card{background:#fff;border:1px solid #e5e7eb;border-radius:.75rem}
+    .chip{display:inline-block;border:1px solid #e5e7eb;border-radius:999px;padding:.25rem .75rem;font-size:.875rem}
+    .muted{color:#6b7280}
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
   <!-- Top Nav -->
   <header class="sticky top-0 z-30 bg-white/90 backdrop-blur border-b">
     <div class="max-w-6xl mx-auto px-4 py-2 flex items-center gap-4">
-      <a href="#home" class="font-semibold md:text-lg">Rujun (Rhea) Gao</a>
+      <a href="index.html" class="font-semibold md:text-lg">Rujun (Rhea) Gao</a>
       <nav class="ml-auto flex flex-wrap gap-1 text-sm md:text-base">
-        <a class="nav-link" href="#home">Home</a>
-        <a class="nav-link" href="#publications">Publications</a>
-        <a class="nav-link" href="#awards">Fellowships & Awards</a>
-        <a class="nav-link" href="#outreach">Outreach</a>
-        <a class="nav-link" href="#contact">Contact Me</a>
+        <a class="nav-link nav-active" href="index.html">Home</a>
+        <a class="nav-link" href="publications.html">Publications</a>
+        <a class="nav-link" href="awards.html">Fellowships & Awards</a>
+        <a class="nav-link" href="outreach.html">Outreach</a>
+        <a class="nav-link" href="contact.html">Contact Me</a>
       </nav>
     </div>
   </header>
 
   <!-- Main -->
-  <main id="home" class="max-w-6xl mx-auto px-4 py-8">
+  <main class="max-w-6xl mx-auto px-4 py-8">
     <div class="grid lg:grid-cols-[320px_1fr] gap-6">
       <!-- Left: Profile -->
       <aside class="card p-5">
         <div class="aspect-square w-full overflow-hidden rounded-lg bg-gray-100 grid place-items-center">
-          <img src="headshot.jpg" alt="Portrait of Rujun (Rhea) Gao" class="w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('noimg').style.display='block'">
+          <img src="headshot.jpg" alt="Portrait of Rujun (Rhea) Gao"
+               class="w-full h-full object-cover"
+               onerror="this.style.display='none';document.getElementById('noimg').style.display='block'">
           <span id="noimg" class="text-gray-400 text-sm hidden">Upload <b>headshot.jpg</b></span>
         </div>
 
@@ -64,16 +66,13 @@
         </div>
 
         <div class="mt-4">
-          <a href="CV.pdf" class="inline-flex items-center gap-2 underline text-sm md:text-base">
-            Download CV (PDF)
-          </a>
+          <a href="CV.pdf" class="inline-flex items-center gap-2 underline text-sm md:text-base">Download CV (PDF)</a>
           <div class="text-xs text-gray-500 mt-1">Updated <span id="updated">Oct 2025</span></div>
         </div>
       </aside>
 
-      <!-- Right: Affiliation + Bio + Sections -->
+      <!-- Right: Affiliation + Bio + Experience -->
       <section class="space-y-5">
-        <!-- Affiliation -->
         <div class="card p-5">
           <div class="text-lg md:text-xl font-semibold">Education & Affiliation</div>
           <ul class="mt-3 space-y-2 text-sm md:text-base">
@@ -84,159 +83,58 @@
           </ul>
         </div>
 
-        <!-- Bio / Summary -->
-        <article class="card p-5 prose prose-sm md:prose-base max-w-none">
-          <p><b>Summary.</b> A strong self-starter who drives large-scale AI projects from 0→1, combining research insight with execution excellence; a fast learner applying state-of-the-art Generative AI, LLMs, Agents, and ML to deliver innovative, scalable solutions; an experienced researcher across design, implementation, testing, launch, and maintenance; and a proven team lead who motivates cross-functional teams and consistently achieves ambitious goals.</p>
+        <article class="card p-5">
+          <p class="leading-relaxed">
+            <b>Summary.</b> A self-starter who drives large-scale AI projects from 0→1; fast learner applying Generative AI, LLMs,
+            Agents, and ML to deliver scalable solutions; experienced across design, implementation, testing, launch,
+            and maintenance; a proven team lead who motivates cross-functional teams and consistently achieves goals.
+          </p>
         </article>
 
-        <!-- Experience -->
         <section class="card p-5">
           <h3 class="text-xl font-semibold mb-3">Work Experience</h3>
-
           <div class="mb-5">
             <div class="flex flex-wrap items-baseline gap-2">
-              <div class="font-medium">Encando.AI (Co-founder) — AI-powered Higher-Education SaaS Platform</div>
+              <div class="font-medium">Encando.AI — AI-powered Higher-Education SaaS</div>
               <div class="muted">CEO & CTO</div>
               <div class="ml-auto text-sm muted">02/2025–Present · Remote</div>
             </div>
             <ul class="list-disc pl-5 mt-2 space-y-1 text-sm md:text-base">
-              <li>End-to-end development integrating RAG, multi-agent architecture, and context-aware LLM apps for content generation, grading, tutoring.</li>
-              <li>Designed scalable systems (LLMs, LangChain, vector DB) on AWS for semantic search and adaptive feedback.</li>
-              <li>Built FastAPI services linking RAG pipelines with Canvas LTI dashboards; ensured FERPA & TX-RAMP compliance.</li>
-              <li>Translated research to product with cross-functional team; launched across TAMU, Texas Tech, UNT, UT Austin; 2,000+ active users.</li>
-              <li>Drove evaluation, fine-tuning, and prompt engineering (GPT, Claude, Gemini), boosting grading efficiency by 40%.</li>
+              <li>RAG、multi-agent、context-aware LLM apps：内容生成、自动评分、智能辅导。</li>
+              <li>AWS + LangChain + 向量库，语义检索与自适应反馈；Canvas LTI 集成。</li>
+              <li>落地 TAMU/Texas Tech/UNT/UT Austin，服务 2,000+ 用户；评分效率 +40%。</li>
             </ul>
           </div>
 
           <div class="mb-5">
             <div class="flex flex-wrap items-baseline gap-2">
-              <div class="font-medium">Aira Technologies (Startup)</div>
+              <div class="font-medium">Aira Technologies</div>
               <div class="muted">LLM Researcher, R&D, Co-op</div>
-              <div class="ml-auto text-sm muted">12/2023–05/2024 · Silicon Valley, US</div>
+              <div class="ml-auto text-sm muted">12/2023–05/2024 · Silicon Valley</div>
             </div>
             <ul class="list-disc pl-5 mt-2 space-y-1 text-sm md:text-base">
-              <li>R&D on LLM apps for wireless communications; led function-calling agents, RAG pipelines, agent tooling, and open-source LLM fine-tuning.</li>
-              <li>Developed and customized knowledge base for RANGPT™ (RAN query/control utility).</li>
+              <li>无线通信行业 LLM 应用；函数调用 Agent、RAG、开源模型微调；RANGPT™ 知识库。</li>
             </ul>
           </div>
 
           <div>
             <div class="flex flex-wrap items-baseline gap-2">
-              <div class="font-medium">Institute of Automation, Chinese Academy of Sciences</div>
+              <div class="font-medium">Institute of Automation, CAS</div>
               <div class="muted">Research Intern (Summer)</div>
-              <div class="ml-auto text-sm muted">07/2016–09/2016 · Beijing, China</div>
+              <div class="ml-auto text-sm muted">07/2016–09/2016 · Beijing</div>
             </div>
             <ul class="list-disc pl-5 mt-2 space-y-1 text-sm md:text-base">
-              <li>Studied intelligent social-media recommender algorithms; incorporated social-network signals; benchmarked models via simulation.</li>
+              <li>社交信号增强的智能推荐算法研究与模拟对比。</li>
             </ul>
           </div>
         </section>
-
-        <!-- Research / Projects -->
-        <section class="card p-5">
-          <h3 class="text-xl font-semibold mb-3">Research & Projects</h3>
-          <div class="mb-4">
-            <div class="font-medium">GAI & LLM Strategies for Automatic Assessment (Ph.D. Thesis)</div>
-            <div class="text-sm muted">Graduate Research Assistant · 08/2021–05/2025 · Co-advisors: Prof. Arun R. Srinivasa & Prof. M. Cynthia Hipwell</div>
-            <ul class="list-disc pl-5 mt-2 space-y-1 text-sm md:text-base">
-              <li>Automated grading for open-ended engineering questions using transformer-based LLMs.</li>
-              <li>Built RAG + Agent auto-tutoring platform; filed 4 US patents; deployed at Texas A&M University.</li>
-              <li>Reviewed 1,000+ AI-in-Education papers; hands-on with BERT/GPT, PyTorch, TensorFlow.</li>
-            </ul>
-          </div>
-
-          <div class="mb-4">
-            <div class="font-medium">GAI-powered ADU Planner</div>
-            <div class="text-sm muted">Team Lead · 02/2024</div>
-            <ul class="list-disc pl-5 mt-2 space-y-1 text-sm md:text-base">
-              <li>Users input address to receive policy-compliant ADU plans; provides suppliers/floorplans/renderings.</li>
-              <li>1st Place among 70+ projects at 2024 RAG Hackathon (LlamaIndex + DataStax).</li>
-            </ul>
-          </div>
-
-          <div>
-            <div class="font-medium">LLM-Powered Teaching Assistant Agent (ChaTA)</div>
-            <div class="text-sm muted">06/2023–07/2023</div>
-            <ul class="list-disc pl-5 mt-2 space-y-1 text-sm md:text-base">
-              <li>Fine-tuned LLaMA-2 on 10k Q&A; retrieval-augmented over course KB; answered broad coursework questions accurately.</li>
-              <li>1st Place, 2023 Generative AI Innovation Incubator (Education Track), Carnegie Mellon University; $20,000 prize.</li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- Publications -->
-        <section id="publications" class="card p-5">
-          <h3 class="text-xl font-semibold mb-3">Selected Publications</h3>
-          <ol class="list-decimal pl-6 space-y-2 text-sm md:text-base">
-            <li>Gao, R., Merzdorf, H. E., Anwar, S., Hipwell, M. C., & Srinivasa, A. R. (2024). Automatic assessment of text-based responses in post-secondary education: A systematic review. <i>Computers and Education: Artificial Intelligence</i>, 6, 100206.</li>
-            <li>Zhang, J., Chen, J., Gao, R., Ma, R., et al. (2019). Research on Modification Algorithms of Cylindrical External Thread Profile Based on Machine Vision. <i>Measurement Science Review</i>.</li>
-            <li>Gao, R., Guo, X., Li, X., Narayanan, A. B., Thomas, N., & Srinivasa, A. R. (2024). Towards Scalable Automated Grading… Accepted by NeurIPS FM-EduAssess 2024.</li>
-            <li>Li, X., Li, D., Gao, R., Zamani, M., & Khan, L. (2025). LSEBMCL: A Latent Space Energy-Based Model for Continual Learning. Accepted by ICAIIC 2025. arXiv:2501.05495.</li>
-            <li>Gao, R., Thomas, N., & Srinivasa, A. (2023). Work in Progress: Large Language Model Based Automatic Grading Study. IEEE FIE 2023.</li>
-            <li>Gao, R. (2018). Intelligent Material Transportation System Design for Small and Medium-Sized Plants. IHSED 2018.</li>
-          </ol>
-        </section>
-
-        <!-- Awards -->
-        <section id="awards" class="card p-5">
-          <h3 class="text-xl font-semibold mb-3">Fellowships & Awards</h3>
-          <ul class="list-disc pl-5 space-y-1 text-sm md:text-base">
-            <li>Student Leader – Mechanical Engineering Female Graduate Students Association, Texas A&M University</li>
-            <li>Graduate Student Ambassador – J. Mike Walker ’66 Department of Mechanical Engineering</li>
-            <li>MEEN Graduate Travel Award — 06/2022 & 06/2023</li>
-            <li>J George H Thompson Grad Fellowship, Texas A&M — 06/2022 & 06/2023</li>
-            <li>Mr and Mrs Gray Fellowship, Texas A&M — 06/2021</li>
-            <li>Top 10 Excellent Student — Zhejiang University — 05/2020</li>
-            <li>Outstanding Graduate Student — Zhejiang University — 2017–2018, 2018–2019</li>
-            <li>Second Prize, Shanghai Mechanical Engineering Innovation Competition (Team Lead) — 05/2016</li>
-          </ul>
-        </section>
-
-        <!-- Outreach -->
-        <section id="outreach" class="card p-5">
-          <h3 class="text-xl font-semibold mb-3">Outreach</h3>
-          <ul class="list-disc pl-5 space-y-1 text-sm md:text-base">
-            <li>Community / education / outreach activities as applicable.</li>
-          </ul>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact" class="card p-5">
-          <h3 class="text-xl font-semibold mb-3">Contact Me</h3>
-          <div class="grid md:grid-cols-2 gap-4 text-sm md:text-base">
-            <div>
-              <div class="muted">Email</div>
-              <a class="underline font-medium" href="mailto:grj1214@tamu.edu">grj1214@tamu.edu</a>
-            </div>
-            <div>
-              <div class="muted">Phone</div>
-              <a class="underline font-medium" href="tel:+19793213135">+1 (979) 321-3135</a>
-            </div>
-            <div>
-              <div class="muted">Links</div>
-              <div class="flex flex-wrap gap-2 mt-1">
-                <a class="underline" target="_blank" href="https://github.com/RJ-Heisenberg">GitHub</a>
-                <a class="underline" target="_blank" href="https://www.linkedin.com/in/rujun-gao-00740a221/">LinkedIn</a>
-                <a class="underline" target="_blank" href="https://scholar.google.com/citations?user=itvDIHoAAAAJ&hl=en&oi=ao">Google Scholar</a>
-                <a class="underline" target="_blank" href="http://www.encando.ai/">Encando.ai</a>
-                <a class="underline" href="CV.pdf">CV (PDF)</a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <footer class="text-xs text-gray-500 py-4">
-          <div>Copyright © <span id="year"></span> Rujun (Rhea) Gao</div>
-          <div class="mt-1">Google Sites–style template • Deployed via GitHub Pages</div>
-        </footer>
       </section>
     </div>
   </main>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    // 如果想让“Updated”自动取今天，取消下一行注释
-    // document.getElementById('updated').textContent = new Date().toLocaleString('en-US', {month:'short', year:'numeric'});
-  </script>
+  <footer class="text-xs text-gray-500 py-6 text-center border-t">
+    © <span id="year"></span> Rujun (Rhea) Gao
+  </footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
 </body>
 </html>
