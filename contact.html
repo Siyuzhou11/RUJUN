@@ -1,61 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Contact — Rujun (Rhea) Gao</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .nav-link{padding:.5rem .75rem;border-radius:.5rem}
-    .nav-link:hover{opacity:.7}
-    .nav-active{background:#f3f4f6}
-    .card{background:#fff;border:1px solid #e5e7eb;border-radius:.75rem}
-  </style>
+<!-- ====== 📄 contact.html ====== -->
+<title>Contact — Rujun (Rhea) Gao</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class'}</script>
+<style>.card{background:#fff;border:1px solid #e5e7eb;border-radius:1rem}.dark .card{background:#0b1020;border-color:#1f2a44}</style>
 </head>
-<body class="bg-gray-50 text-gray-900">
-  <header class="sticky top-0 z-30 bg-white/90 backdrop-blur border-b">
-    <div class="max-w-6xl mx-auto px-4 py-2 flex items-center gap-4">
-      <a href="index.html" class="font-semibold md:text-lg">Rujun (Rhea) Gao</a>
-      <nav class="ml-auto flex flex-wrap gap-1 text-sm md:text-base">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="publications.html">Publications</a>
-        <a class="nav-link" href="awards.html">Fellowships & Awards</a>
-        <a class="nav-link" href="outreach.html">Outreach</a>
-        <a class="nav-link nav-active" href="contact.html">Contact Me</a>
-      </nav>
-    </div>
-  </header>
+<body class="bg-white dark:bg-[#0b1020] text-slate-900 dark:text-slate-100">
+<div class="h-1 w-full bg-gradient-to-r from-brand-500 via-fuchsia-500 to-cyan-400"></div>
+<header class="sticky top-0 z-40 border-b border-slate-200/80 dark:border-slate-800/80 glass bg-white/70 dark:bg-[#0b1020]/70">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center gap-4">
+<a href="index.html" class="font-semibold text-lg">Rujun (Rhea) Gao</a>
+<nav class="ml-auto flex items-center gap-1 text-[0.95rem]">
+<a data-nav href="index.html" class="px-3 py-2 rounded-lg hover:bg-slate-100/70 dark:hover:bg-white/5">Home</a>
+<a data-nav href="publications.html" class="px-3 py-2 rounded-lg hover:bg-slate-100/70 dark:hover:bg-white/5">Publications</a>
+<a data-nav href="awards.html" class="px-3 py-2 rounded-lg hover:bg-slate-100/70 dark:hover:bg-white/5">Fellowships & Awards</a>
+<a data-nav href="outreach.html" class="px-3 py-2 rounded-lg hover:bg-slate-100/70 dark:hover:bg-white/5">Outreach</a>
+<a data-nav href="contact.html" class="px-3 py-2 rounded-lg hover:bg-slate-100/70 dark:hover:bg-white/5">Contact Me</a>
+</nav>
+</div>
+</header>
 
-  <main class="max-w-6xl mx-auto px-4 py-8">
-    <section class="card p-5">
-      <h1 class="text-2xl md:text-3xl font-semibold mb-4">Contact Me</h1>
-      <div class="grid md:grid-cols-2 gap-4 text-sm md:text-base">
-        <div>
-          <div class="text-gray-600">Email</div>
-          <a class="underline font-medium" href="mailto:grj1214@tamu.edu">grj1214@tamu.edu</a>
-        </div>
-        <div>
-          <div class="text-gray-600">Phone</div>
-          <a class="underline font-medium" href="tel:+19793213135">+1 (979) 321-3135</a>
-        </div>
-        <div>
-          <div class="text-gray-600">Links</div>
-          <div class="flex flex-wrap gap-2 mt-1">
-            <a class="underline" target="_blank" href="https://github.com/RJ-Heisenberg">GitHub</a>
-            <a class="underline" target="_blank" href="https://www.linkedin.com/in/rujun-gao-00740a221/">LinkedIn</a>
-            <a class="underline" target="_blank" href="https://scholar.google.com/citations?user=itvDIHoAAAAJ&hl=en&oi=ao">Google Scholar</a>
-            <a class="underline" target="_blank" href="http://www.encando.ai/">Encando.ai</a>
-            <a class="underline" href="CV.pdf">CV (PDF)</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
 
-  <footer class="text-xs text-gray-500 py-6 text-center border-t">
-    © <span id="year"></span> Rujun (Rhea) Gao
-  </footer>
-  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-6">
+<div class="card p-6">
+<h1 class="text-2xl md:text-3xl font-semibold">Contact Me</h1>
+<div class="grid md:grid-cols-2 gap-6 mt-4">
+<div>
+<div class="text-slate-500">Email</div>
+<a class="underline font-medium" href="mailto:grj1214@tamu.edu">grj1214@tamu.edu</a>
+</div>
+<div>
+<div class="text-slate-500">Phone</div>
+<a class="underline font-medium" href="tel:+19793213135">+1 (979) 321‑3135</a>
+</div>
+<div>
+<div class="text-slate-500">Links</div>
+<div class="flex flex-wrap gap-3 mt-2">
+<a class="underline" target="_blank" href="https://github.com/RJ-Heisenberg">GitHub</a>
+<a class="underline" target="_blank" href="https://www.linkedin.com/in/rujun-gao-00740a221/">LinkedIn</a>
+<a class="underline" target="_blank" href="https://scholar.google.com/citations?user=itvDIHoAAAAJ&hl=en&oi=ao">Google Scholar</a>
+<a class="underline" target="_blank" href="http://www.encando.ai/">Encando.ai</a>
+<a class="underline" href="CV.pdf">CV (PDF)</a>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+
+<footer class="border-t border-slate-200/80 dark:border-slate-800/80">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 text-sm text-slate-600 dark:text-slate-400 text-center">© <span id="year"></span> Rujun (Rhea) Gao</div>
+</footer>
+
+
+<script>
+const root=document.documentElement; if(localStorage.theme==='dark') root.classList.add('dark')
+const path = location.pathname.split('/').pop() || 'contact.html';
+document.querySelectorAll('[data-nav]').forEach(a=>{ if(a.getAttribute('href')===path) a.classList.add('bg-slate-900/5','dark:bg-white/10','font-medium') })
+document.getElementById('year').textContent=new Date().getFullYear()
+</script>
 </body>
 </html>
-
