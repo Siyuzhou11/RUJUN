@@ -1,140 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Home — Rujun (Rhea) Gao</title>
-  <meta name="description" content="Research homepage of Rujun (Rhea) Gao">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .nav-link{padding:.5rem .75rem;border-radius:.5rem}
-    .nav-link:hover{opacity:.7}
-    .nav-active{background:#f3f4f6}
-    .card{background:#fff;border:1px solid #e5e7eb;border-radius:.75rem}
-    .chip{display:inline-block;border:1px solid #e5e7eb;border-radius:999px;padding:.25rem .75rem;font-size:.875rem}
-    .muted{color:#6b7280}
-  </style>
-</head>
-<body class="bg-gray-50 text-gray-900">
-  <!-- Top Nav -->
-  <header class="sticky top-0 z-30 bg-white/90 backdrop-blur border-b">
-    <div class="max-w-6xl mx-auto px-4 py-2 flex items-center gap-4">
-      <a href="index.html" class="font-semibold md:text-lg">Rujun (Rhea) Gao</a>
-      <nav class="ml-auto flex flex-wrap gap-1 text-sm md:text-base">
-        <a class="nav-link nav-active" href="index.html">Home</a>
-        <a class="nav-link" href="publications.html">Publications</a>
-        <a class="nav-link" href="awards.html">Fellowships & Awards</a>
-        <a class="nav-link" href="outreach.html">Outreach</a>
-        <a class="nav-link" href="contact.html">Contact Me</a>
-      </nav>
-    </div>
-  </header>
+<html lang="en" class="scroll-smooth">
+<div class="flex flex-wrap items-baseline gap-2">
+<div class="font-medium">Encando.AI — AI‑powered Higher‑Education SaaS</div>
+<div class="text-slate-500">CEO & CTO</div>
+<div class="ml-auto text-sm text-slate-500">02/2025–Present · Remote</div>
+</div>
+<ul class="list-disc pl-5 mt-2 space-y-1">
+<li>RAG, multi‑agent, context‑aware LLM apps for content generation, grading, tutoring.</li>
+<li>AWS + LangChain + vector DB; Canvas LTI integration; 2,000+ users across TAMU/Texas Tech/UNT/UT Austin.</li>
+<li>Evaluation, fine‑tuning, prompt engineering (GPT/Claude/Gemini) → grading efficiency +40%.</li>
+</ul>
+</div>
+<div>
+<div class="flex flex-wrap items-baseline gap-2">
+<div class="font-medium">Aira Technologies</div>
+<div class="text-slate-500">LLM Researcher, R&D, Co‑op</div>
+<div class="ml-auto text-sm text-slate-500">12/2023–05/2024 · Silicon Valley</div>
+</div>
+<ul class="list-disc pl-5 mt-2 space-y-1">
+<li>LLM apps for wireless communications; function‑calling agents, RAG pipelines, open‑source fine‑tuning; RANGPT™ KB.</li>
+</ul>
+</div>
+<div>
+<div class="flex flex-wrap items-baseline gap-2">
+<div class="font-medium">Institute of Automation, CAS</div>
+<div class="text-slate-500">Research Intern (Summer)</div>
+<div class="ml-auto text-sm text-slate-500">07/2016–09/2016 · Beijing</div>
+</div>
+<ul class="list-disc pl-5 mt-2 space-y-1">
+<li>Intelligent recommender algorithms with social‑network signals; simulation benchmarking.</li>
+</ul>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</section>
 
-  <!-- Main -->
-  <main class="max-w-6xl mx-auto px-4 py-8">
-    <div class="grid lg:grid-cols-[320px_1fr] gap-6">
-      <!-- Left: Profile -->
-      <aside class="card p-5">
-        <div class="aspect-square w-full overflow-hidden rounded-lg bg-gray-100 grid place-items-center">
-          <img src="headshot.jpg" alt="Portrait of Rujun (Rhea) Gao"
-               class="w-full h-full object-cover"
-               onerror="this.style.display='none';document.getElementById('noimg').style.display='block'">
-          <span id="noimg" class="text-gray-400 text-sm hidden">Upload <b>headshot.jpg</b></span>
-        </div>
 
-        <h1 class="mt-4 text-2xl font-semibold">Rujun (Rhea) Gao</h1>
-        <div class="mt-1 text-sm">College Station, TX 77840</div>
-        <div class="mt-3 text-sm">
-          <span class="font-medium">Areas:</span> GAI / LLM / NLP / Machine Learning / Deep Learning / Data Analyst
-        </div>
+<footer class="border-t border-slate-200/80 dark:border-slate-800/80">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 text-sm text-slate-600 dark:text-slate-400 text-center">© <span id="year"></span> Rujun (Rhea) Gao</div>
+</footer>
 
-        <h2 class="mt-4 font-medium">Research interest</h2>
-        <ul class="mt-2 space-y-1 text-sm">
-          <li>Generative AI & LLM-based assessment</li>
-          <li>RAG, LLM Agents & Prompt Engineering</li>
-          <li>NLP, Deep Learning, Reinforcement Learning</li>
-          <li>Evaluation, Fine-tuning, In-Context Learning</li>
-          <li>Data & Statistical Analysis, Optimization</li>
-        </ul>
 
-        <div class="mt-5 flex flex-wrap gap-2">
-          <a class="chip" href="mailto:grj1214@tamu.edu">Email</a>
-          <a class="chip" target="_blank" href="https://www.linkedin.com/in/rujun-gao-00740a221/">LinkedIn</a>
-          <a class="chip" target="_blank" href="https://scholar.google.com/citations?user=itvDIHoAAAAJ&hl=en&oi=ao">Google Scholar</a>
-          <a class="chip" target="_blank" href="https://github.com/RJ-Heisenberg">GitHub</a>
-          <a class="chip" target="_blank" href="http://www.encando.ai/">Encando.ai</a>
-        </div>
+<script>
+// Theme toggle
+const root = document.documentElement; const btn=document.getElementById('themeBtn');
+const setTheme = (m) => { m==='dark'?root.classList.add('dark'):root.classList.remove('dark'); localStorage.theme=m }
+setTheme(localStorage.theme || (matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'))
+btn.addEventListener('click',()=> setTheme(root.classList.contains('dark')?'light':'dark'))
 
-        <div class="mt-4">
-          <a href="CV.pdf" class="inline-flex items-center gap-2 underline text-sm md:text-base">Download CV (PDF)</a>
-          <div class="text-xs text-gray-500 mt-1">Updated <span id="updated">Oct 2025</span></div>
-        </div>
-      </aside>
 
-      <!-- Right: Affiliation + Bio + Experience -->
-      <section class="space-y-5">
-        <div class="card p-5">
-          <div class="text-lg md:text-xl font-semibold">Education & Affiliation</div>
-          <ul class="mt-3 space-y-2 text-sm md:text-base">
-            <li><b>Ph.D., Generative AI research (GPA 3.5)</b>, Texas A&M University, College Station, TX, US (08/2020–05/2025). Dissertation: Generative AI & LLM-based Automatic Assessment Study in Engineering.</li>
-            <li><b>M.S., Mechatronic Engineering (GPA 3.8)</b>, Zhejiang University, Hangzhou, China (09/2017–06/2020). Outstanding Graduate.</li>
-            <li><b>Exchange, Computer Science (GPA 4.0)</b>, National Tsing Hua University, Taiwan (02/2018–06/2018).</li>
-            <li><b>B.S., Hons Mechanical Engineering (GPA 3.7)</b>, Donghua University, Shanghai, China (09/2013–06/2017). Outstanding Graduate.</li>
-          </ul>
-        </div>
+// Active nav
+const path = location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('[data-nav]').forEach(a=>{
+const isActive = a.getAttribute('href')===path || (path==='' && a.getAttribute('href')==='index.html');
+if(isActive){ a.classList.add('bg-slate-900/5','dark:bg-white/10','font-medium') }
+})
 
-        <article class="card p-5">
-          <p class="leading-relaxed">
-            <b>Summary.</b> A self-starter who drives large-scale AI projects from 0→1; fast learner applying Generative AI, LLMs,
-            Agents, and ML to deliver scalable solutions; experienced across design, implementation, testing, launch,
-            and maintenance; a proven team lead who motivates cross-functional teams and consistently achieves goals.
-          </p>
-        </article>
 
-        <section class="card p-5">
-          <h3 class="text-xl font-semibold mb-3">Work Experience</h3>
-          <div class="mb-5">
-            <div class="flex flex-wrap items-baseline gap-2">
-              <div class="font-medium">Encando.AI — AI-powered Higher-Education SaaS</div>
-              <div class="muted">CEO & CTO</div>
-              <div class="ml-auto text-sm muted">02/2025–Present · Remote</div>
-            </div>
-            <ul class="list-disc pl-5 mt-2 space-y-1 text-sm md:text-base">
-              <li>RAG、multi-agent、context-aware LLM apps：内容生成、自动评分、智能辅导。</li>
-              <li>AWS + LangChain + 向量库，语义检索与自适应反馈；Canvas LTI 集成。</li>
-              <li>落地 TAMU/Texas Tech/UNT/UT Austin，服务 2,000+ 用户；评分效率 +40%。</li>
-            </ul>
-          </div>
-
-          <div class="mb-5">
-            <div class="flex flex-wrap items-baseline gap-2">
-              <div class="font-medium">Aira Technologies</div>
-              <div class="muted">LLM Researcher, R&D, Co-op</div>
-              <div class="ml-auto text-sm muted">12/2023–05/2024 · Silicon Valley</div>
-            </div>
-            <ul class="list-disc pl-5 mt-2 space-y-1 text-sm md:text-base">
-              <li>无线通信行业 LLM 应用；函数调用 Agent、RAG、开源模型微调；RANGPT™ 知识库。</li>
-            </ul>
-          </div>
-
-          <div>
-            <div class="flex flex-wrap items-baseline gap-2">
-              <div class="font-medium">Institute of Automation, CAS</div>
-              <div class="muted">Research Intern (Summer)</div>
-              <div class="ml-auto text-sm muted">07/2016–09/2016 · Beijing</div>
-            </div>
-            <ul class="list-disc pl-5 mt-2 space-y-1 text-sm md:text-base">
-              <li>社交信号增强的智能推荐算法研究与模拟对比。</li>
-            </ul>
-          </div>
-        </section>
-      </section>
-    </div>
-  </main>
-
-  <footer class="text-xs text-gray-500 py-6 text-center border-t">
-    © <span id="year"></span> Rujun (Rhea) Gao
-  </footer>
-  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
