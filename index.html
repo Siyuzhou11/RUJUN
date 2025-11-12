@@ -1,267 +1,778 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Rujun (Rhea) Gao — Portfolio</title>
-  <meta name="description" content="Rujun (Rhea) Gao — GAI/LLM/NLP/Machine Learning/Data Analyst">
-  <meta property="og:title" content="Rujun (Rhea) Gao">
-  <meta property="og:description" content="GAI / LLM / NLP / Machine Learning / Deep Learning / Data Analyst">
-  <meta property="og:type" content="website">
-  <link rel="icon" href="favicon.ico">
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rujun (Rhea) Gao</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', 'Arial', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            display: flex;
+        }
+        
+        .sidebar {
+            width: 280px;
+            background: #2c3e50;
+            color: white;
+            padding: 40px 30px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            font-weight: bold;
+            border: 4px solid white;
+        }
+        
+        .sidebar h1 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .sidebar .title {
+            font-size: 0.95em;
+            color: #bdc3c7;
+            text-align: center;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        
+        .nav-menu {
+            margin-top: 30px;
+        }
+        
+        .nav-menu a {
+            display: block;
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 12px 15px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .nav-menu a:hover {
+            background: #34495e;
+            padding-left: 20px;
+        }
+        
+        .nav-menu a.active {
+            background: #3498db;
+            font-weight: bold;
+        }
+        
+        .sidebar-links {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #34495e;
+        }
+        
+        .sidebar-links a {
+            display: block;
+            color: #95a5a6;
+            text-decoration: none;
+            padding: 8px 0;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .sidebar-links a:hover {
+            color: #3498db;
+        }
+        
+        .main-content {
+            flex: 1;
+            padding: 60px 70px;
+        }
+        
+        .page {
+            display: none;
+        }
+        
+        .page.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .intro {
+            font-size: 1.05em;
+            margin-bottom: 40px;
+            text-align: justify;
+            line-height: 1.9;
+            color: #2c3e50;
+        }
+        
+        .intro strong {
+            color: #2980b9;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #34495e;
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .skill-category h4 {
+            color: #2980b9;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .skill-tag {
+            display: inline-block;
+            background: #ecf0f1;
+            padding: 6px 12px;
+            border-radius: 15px;
+            color: #2c3e50;
+            font-size: 0.9em;
+            margin: 5px 5px 5px 0;
+        }
+        
+        .research-interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 20px 0;
+        }
+        
+        .interest-tag {
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            color: white;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+        
+        .experience-item, .project-item {
+            margin-bottom: 35px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .item-header {
+            font-weight: bold;
+            color: #2980b9;
+            font-size: 1.2em;
+            margin-bottom: 8px;
+        }
+        
+        .item-meta {
+            color: #7f8c8d;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .award {
+            background: #fff9e6;
+            padding: 8px 15px;
+            border-radius: 5px;
+            display: inline-block;
+            color: #d68910;
+            font-weight: bold;
+            margin: 8px 0;
+            font-size: 0.95em;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        .publication {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 3px solid #3498db;
+        }
+        
+        .pub-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+        
+        .pub-authors {
+            color: #555;
+            margin-bottom: 5px;
+        }
+        
+        .pub-venue {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        .patent-item {
+            background: #f0f8ff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border-left: 3px solid #2ecc71;
+        }
+        
+        .patent-number {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+        
+        .news-item {
+            padding: 20px;
+            margin-bottom: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .news-date {
+            color: #e74c3c;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .contact-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #ecf0f1;
+            transition: all 0.3s;
+        }
+        
+        .contact-card:hover {
+            border-color: #3498db;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .contact-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        
+        .contact-card h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .contact-card a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+        
+        .update-note {
+            text-align: center;
+            color: #95a5a6;
+            font-size: 0.9em;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ecf0f1;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            
+            .main-content {
+                padding: 30px 25px;
+            }
+            
+            .skills-grid, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-<body class="bg-white text-gray-900">
-  <!-- 顶部导航 -->
-  <header class="sticky top-0 z-30 backdrop-blur bg-white/80 border-b">
-    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center gap-4">
-      <div class="text-lg md:text-xl font-semibold">Rujun (Rhea) Gao</div>
-      <nav class="ml-auto hidden md:flex gap-5 text-sm">
-        <a href="#about" class="hover:opacity-70">About</a>
-        <a href="#experience" class="hover:opacity-70">Experience</a>
-        <a href="#research" class="hover:opacity-70">Research/Projects</a>
-        <a href="#publications" class="hover:opacity-70">Publications</a>
-        <a href="#patents" class="hover:opacity-70">Patents</a>
-        <a href="#education" class="hover:opacity-70">Education</a>
-        <a href="#skills" class="hover:opacity-70">Skills</a>
-        <a href="#awards" class="hover:opacity-70">Awards</a>
-        <a href="#contact" class="hover:opacity-70">Contact</a>
-      </nav>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile-photo">RG</div>
+            <h1>Rujun (Rhea) Gao</h1>
+            <p class="title">Ph.D. in Generative AI<br>Texas A&M University</p>
+            
+            <nav class="nav-menu">
+                <a href="#home" class="nav-link active" onclick="showPage('home')">🏠 Home</a>
+                <a href="#research" class="nav-link" onclick="showPage('research')">🔬 Research & Projects</a>
+                <a href="#publications" class="nav-link" onclick="showPage('publications')">📚 Publications & Patents</a>
+                <a href="#news" class="nav-link" onclick="showPage('news')">📰 News & Awards</a>
+                <a href="#contact" class="nav-link" onclick="showPage('contact')">📧 Contact</a>
+            </nav>
+            
+            <div class="sidebar-links">
+                <a href="mailto:grj1214@tamu.edu">✉️ Email</a>
+                <a href="https://www.linkedin.com/in/rujun-gao" target="_blank">💼 LinkedIn</a>
+                <a href="https://scholar.google.com" target="_blank">🎓 Google Scholar</a>
+                <a href="https://github.com/rujungao" target="_blank">💻 GitHub</a>
+            </div>
+        </aside>
+        
+        <main class="main-content">
+            <!-- HOME PAGE -->
+            <div id="home" class="page active">
+                <h2>About Me</h2>
+                <div class="intro">
+                    I am a <strong>Ph.D. candidate</strong> at Texas A&M University, specializing in <strong>Generative AI and Large Language Models</strong> for automatic assessment in engineering education. My research integrates cutting-edge <strong>LLM technologies, Retrieval-Augmented Generation (RAG), and multi-agent systems</strong> to develop intelligent educational platforms that automate grading, tutoring, and personalized learning at scale.
+                    <br><br>
+                    I am also the <strong>Co-founder, CEO & CTO of Encando.AI</strong>, an AI-powered higher education SaaS platform serving <strong>2000+ active users</strong> across multiple universities including Texas A&M, Texas Tech, UNT, and UT Austin. By bridging fundamental AI research with practical deployment, I aim to transform education through scalable, intelligent automation and support evidence-based decision-making in teaching and learning.
+                </div>
+                
+                <h2>Research Interests</h2>
+                <div class="research-interests">
+                    <span class="interest-tag">Large Language Models</span>
+                    <span class="interest-tag">Generative AI</span>
+                    <span class="interest-tag">RAG Systems</span>
+                    <span class="interest-tag">Multi-Agent Systems</span>
+                    <span class="interest-tag">AI in Education</span>
+                    <span class="interest-tag">Automatic Assessment</span>
+                    <span class="interest-tag">NLP</span>
+                    <span class="interest-tag">Prompt Engineering</span>
+                </div>
+                
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>💻 Programming</h4>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">MATLAB</span>
+                        <span class="skill-tag">C/C++</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>🤖 AI/ML Frameworks</h4>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">LangChain</span>
+                        <span class="skill-tag">LlamaIndex</span>
+                        <span class="skill-tag">FAISS</span>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>🧠 LLM Technologies</h4>
+                        <span class="skill-tag">GPT-4o/5</span>
+                        <span class="skill-tag">Claude</span>
+                        <span class="skill-tag">BERT</span>
+                        <span class="skill-tag">LLaMA</span>
+                        <span class="skill-tag">RAG</span>
+                        <span class="skill-tag">Fine-tuning</span>
+                        <span class="skill-tag">Agent Dev</span>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>☁️ Cloud & Infrastructure</h4>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Vector DB</span>
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">Docker</span>
+                    </div>
+                </div>
+                
+                <h2>Education</h2>
+                <div class="experience-item">
+                    <div class="item-header">Ph.D. in Generative AI Research</div>
+                    <div class="item-meta">Texas A&M University | Aug 2020 - May 2025 | GPA: 3.5</div>
+                    <p><strong>Dissertation:</strong> Generative AI and Large Language Model-Based Automatic Assessment Study in Engineering</p>
+                    <p><strong>Advisors:</strong> Prof. Arun R. Srinivasa & Prof. M. Cynthia Hipwell</p>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">M.S. in Mechatronic Engineering</div>
+                    <div class="item-meta">Zhejiang University, China | Sep 2017 - Jun 2020 | GPA: 3.8</div>
+                    <p>"Outstanding Graduate" of Zhejiang University</p>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">Exchange Student in Computer Science</div>
+                    <div class="item-meta">National Tsing Hua University, Taiwan | Feb 2018 - Jun 2018 | GPA: 4.0</div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">B.S. (Hons) in Mechanical Engineering</div>
+                    <div class="item-meta">Donghua University, China | Sep 2013 - Jun 2017 | GPA: 3.7</div>
+                    <p>"Outstanding Graduate" of Donghua University</p>
+                </div>
+            </div>
+            
+            <!-- RESEARCH & PROJECTS PAGE -->
+            <div id="research" class="page">
+                <h2>Professional Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="item-header">Co-founder, CEO & CTO - Encando.AI</div>
+                    <div class="item-meta">AI-powered Higher-Education SaaS Platform | Feb 2025 - Present | www.encando.ai</div>
+                    <ul>
+                        <li>Led end-to-end development of an AI-driven education platform integrating RAG, multi-agent architecture, and context-aware LLM applications to automate content generation, grading, and tutoring</li>
+                        <li>Designed and deployed scalable ML systems leveraging LLMs, LangChain, vector databases, and AWS cloud infrastructure for semantic search and intelligent assessment</li>
+                        <li>Implemented FastAPIs connecting backend RAG pipelines with LMS platforms (Canvas), ensuring FERPA and TX-RAMP compliance</li>
+                        <li>Led cross-functional team launching products across multiple universities (Texas A&M, Texas Tech, UNT, UT Austin), serving 2000+ active users</li>
+                        <li>Achieved 40% improvement in grading efficiency through model evaluation, fine-tuning, and prompt engineering (GPT, Claude, Gemini)</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">LLM Researcher, R&D - Aira Technologies (Startup)</div>
+                    <div class="item-meta">Silicon Valley, US | Dec 2023 - May 2024</div>
+                    <ul>
+                        <li>R&D on LLM-based applications in wireless communication industry</li>
+                        <li>Led knowledge base development and customization for RANGPT™ - world's first LLM-based utility for Radio Access Network query and control</li>
+                        <li>Specialized in LLM function calling agent development, RAG methods, agent pipelines, and fine-tuning open-source LLMs</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">Graduate Research Assistant - Texas A&M University</div>
+                    <div class="item-meta">College Station, TX | Aug 2021 - May 2025</div>
+                    <ul>
+                        <li>Ph.D. dissertation on Generative AI and LLM-based strategies for automatic assessment in engineering</li>
+                        <li>Developed automated grading system for open-ended questions using transformer-based LLMs</li>
+                        <li>Created auto-tutoring platform with RAG and Agent pipeline providing 24/7 learning support (filed 4 US patents)</li>
+                        <li>Conducted systematic review of 1,000+ papers on AI in Education, published in high-impact journal</li>
+                        <li>Hands-on experience with BERT, GPT, LLaMA models using PyTorch and TensorFlow</li>
+                    </ul>
+                </div>
+                
+                <h2>Selected Research Projects</h2>
+                
+                <div class="project-item">
+                    <div class="item-header">GAI-Powered ADU Planner</div>
+                    <div class="award">🏆 1st Place - 2024 RAG Hackathon (70+ projects, LlamaIndex & DataStax)</div>
+                    <div class="item-meta">Team Lead | February 2024</div>
+                    <p>Developed a Generative AI-powered application where users input their property address to receive customized accessory dwelling unit (ADU) plans based on property layout and state building policies. The system streamlines the ADU process by providing nearby suppliers and floorplan options aligned with construction requirements, including visual rendering capabilities.</p>
+                    <p style="margin-top: 10px;"><strong>Technologies:</strong> RAG, LlamaIndex, Vector Search, Multi-modal AI</p>
+                    <p><a href="https://medium.com/llamaindex-blog/pioneering-the-future-of-housing-introducing-genai-driven-adu-planning-ea950be71e2f" target="_blank" style="color: #3498db;">📄 Read Medium Post →</a></p>
+                </div>
+                
+                <div class="project-item">
+                    <div class="item-header">ChaTA - LLM-Powered Teaching Assistant Agent</div>
+                    <div class="award">🏆 1st Place ($20,000) - 2023 CMU GenAI Innovation Incubator Hackathon</div>
+                    <div class="item-meta">June 2023 - July 2023</div>
+                    <p>Developed an in-house AI tutor fine-tuned on 10,000 Q&A pairs based on the LLaMA-2 model. Created a custom course database to augment the fine-tuned model's performance with information retrieval technology. ChaTA demonstrates proficiency in accurately answering a broad spectrum of student questions related to their coursework.</p>
+                    <p style="margin-top: 10px;"><strong>Technologies:</strong> LLaMA-2, Fine-tuning, Information Retrieval, Custom Database</p>
+                </div>
+                
+                <div class="project-item">
+                    <div class="item-header">Automated Grading System for Engineering Education</div>
+                    <div class="item-meta">Ongoing Research | 2021 - 2025</div>
+                    <p>Developed an automated grading system for evaluating open-ended questions in mechanical engineering quizzes/exams based on transformer-based open-source large language models. The system demonstrates high accuracy in conceptual question evaluation and has been deployed in actual classroom settings.</p>
+                    <p style="margin-top: 10px;"><strong>Technologies:</strong> Transformer Models, BERT, GPT, PyTorch, Prompt Engineering</p>
+                </div>
+            </div>
+            
+            <!-- PUBLICATIONS & PATENTS PAGE -->
+            <div id="publications" class="page">
+                <h2>Journal Articles</h2>
+                
+                <div class="publication">
+                    <div class="pub-title">Automatic assessment of text-based responses in post-secondary education: A systematic review</div>
+                    <div class="pub-authors"><strong>Gao, R.</strong>, Merzdorf, H. E., Anwar, S., Hipwell, M. C., & Srinivasa, A. R.</div>
+                    <div class="pub-venue">Computers and Education: Artificial Intelligence, Vol. 6, 100206, 2024</div>
+                </div>
+                
+                <div class="publication">
+                    <div class="pub-title">Research on Modification Algorithms of Cylindrical External Thread Profile Based on Machine Vision</div>
+                    <div class="pub-authors">Zhang, J., Chen, J., <strong>Gao, R.</strong>, Ma, R., et al.</div>
+                    <div class="pub-venue">Measurement Science Review, November 2019</div>
+                </div>
+                
+                <h2>Conference Proceedings</h2>
+                
+                <div class="publication">
+                    <div class="pub-title">Towards Scalable Automated Grading: Leveraging Large Language Models for Conceptual Question Evaluation in Engineering</div>
+                    <div class="pub-authors"><strong>Gao, R.</strong>, Guo, X., Li, X., Narayanan, A. B., Thomas, N., & Srinivasa, A. R.</div>
+                    <div class="pub-venue">NeurIPS 2024 Workshop on Foundation Models for Education Assessment (FM-EduAssess), 2024</div>
+                </div>
+                
+                <div class="publication">
+                    <div class="pub-title">LSEBMCL: A Latent Space Energy-Based Model for Continual Learning</div>
+                    <div class="pub-authors">Li, X., Li, D., <strong>Gao, R.</strong>, Zamani, M., & Khan, L.</div>
+                    <div class="pub-venue">ICAIIC 2025 (Accepted). arXiv preprint arXiv:2501.05495</div>
+                </div>
+                
+                <div class="publication">
+                    <div class="pub-title">Work in Progress: Large Language Model Based Automatic Grading Study</div>
+                    <div class="pub-authors"><strong>Gao, R.</strong>, Thomas, N., & Srinivasa, A.</div>
+                    <div class="pub-venue">2023 IEEE Frontiers in Education Conference (FIE), College Station, TX, USA, pp. 1-4, 2023</div>
+                </div>
+                
+                <div class="publication">
+                    <div class="pub-title">Intelligent Material Transportation System Design for Small and Medium-Sized Plants</div>
+                    <div class="pub-authors"><strong>Gao, R.</strong></div>
+                    <div class="pub-venue">IHSED 2018: Human Systems Engineering and Design, October 2018</div>
+                </div>
+                
+                <h2>Patents</h2>
+                <p style="margin-bottom: 20px; color: #555;">Filed 4 US patents for AI-powered educational technologies (under review), plus 8 granted Chinese patents:</p>
+                
+                <div class="patent-item">
+                    <div class="patent-number">CN106428733A</div>
+                    <div>An Inflatable Fragile Packing Machine</div>
+                </div>
+                
+                <div class="patent-item">
+                    <div class="patent-number">CN107031122A</div>
+                    <div>An Inflation Device for Inflatable Bags Inside Corrugated Box</div>
+                </div>
+                
+                <div class="patent-item">
+                    <div class="patent-number">CN207209125U</div>
+                    <div>Intelligent Material Transportation System</div>
+                </div>
+                
+                <div class="patent-item">
+                    <div class="patent-number">CN110509309A</div>
+                    <div>A Joint Design for Industrial Polishing Robot</div>
+                </div>
+                
+                <div class="patent-item">
+                    <div class="patent-number">CN110450028A</div>
+                    <div>A Complex Surface Polishing Device</div>
+                </div>
+                
+                <div class="patent-item">
+                    <div class="patent-number">CN210218281U</div>
+                    <div>A Two-Dimensional Valve Swing and Waving Device</div>
+                </div>
+                
+                <div class="patent-item">
+                    <div class="patent-number">CN110296118A</div>
+                    <div>A Switching Structure for Two-Degree-of-Freedom Rotating Valve</div>
+                </div>
+                
+                <div class="patent-item">
+                    <div class="patent-number">CN110319067A</div>
+                    <div>A Double-Motor Based Flow Control and High-Speed Switch Valve</div>
+                </div>
+            </div>
+            
+            <!-- NEWS & AWARDS PAGE -->
+            <div id="news" class="page">
+                <h2>Latest News</h2>
+                
+                <div class="news-item">
+                    <div class="news-date">📅 February 2025</div>
+                    <strong>Co-founded Encando.AI</strong> - Launched AI-powered higher education SaaS platform, now serving 2000+ active users across Texas A&M, Texas Tech, UNT, and UT Austin.
+                </div>
+                
+                <div class="news-item">
+                    <div class="news-date">📅 December 2024</div>
+                    <strong>NeurIPS 2024 Workshop Paper Accepted</strong> - "Towards Scalable Automated Grading: Leveraging Large Language Models for Conceptual Question Evaluation in Engineering" accepted at FM-EduAssess Workshop.
+                </div>
+                
+                <div class="news-item">
+                    <div class="news-date">📅 October 2024</div>
+                    <strong>Journal Article Published</strong> - Systematic review paper on automatic assessment published in <em>Computers and Education: Artificial Intelligence</em>.
+                </div>
+                
+                <div class="news-item">
+                    <div class="news-date">📅 May 2024</div>
+                    <strong>Completed LLM Research at Aira Technologies</strong> - Contributed to RANGPT™, world's first LLM-based utility for Radio Access Network.
+                </div>
+                
+                <div class="news-item">
+                    <div class="news-date">📅 February 2024</div>
+                    <strong>🏆 Won 1st Place at RAG Hackathon</strong> - GAI-powered ADU Planner project won among 70+ projects in Silicon Valley. Featured as webinar guest and Medium post by LlamaIndex.
+                </div>
+                
+                <div class="news-item">
+                    <div class="news-date">📅 July 2023</div>
+                    <strong>🏆 Won 1st Place ($20,000) at CMU Hackathon</strong> - ChaTA project won the Education Track at Carnegie Mellon University's Generative AI Innovation Incubator Hackathon.
+                </div>
+                
+                <h2>Honors & Awards</h2>
+                
+                <div class="experience-item">
+                    <h3 style="color: #2980b9; margin-top: 0;">🏆 Competition Awards</h3>
+                    <ul>
+                        <li><strong>1st Place</strong> - 2024 RAG Hackathon (LlamaIndex & DataStax), Silicon Valley (70+ projects)</li>
+                        <li><strong>1st Place ($20,000)</strong> - 2023 Generative AI Innovation Incubator Hackathon, Carnegie Mellon University</li>
+                        <li><strong>Second Prize</strong> - Shanghai Mechanical Engineering Innovation Competition (Team Lead), 2016</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <h3 style="color: #2980b9; margin-top: 0;">🎓 Academic Honors</h3>
+                    <ul>
+                        <li><strong>MEEN Graduate Travel Award</strong> - Texas A&M University (2022, 2023)</li>
+                        <li><strong>J. George H. Thompson Graduate Fellowship</strong> - Texas A&M University (2022, 2023)</li>
+                        <li><strong>Mr. and Mrs. Gray Fellowship</strong> - Texas A&M University (2021)</li>
+                        <li><strong>Top 10 Excellent Student</strong> - School of Mechanical Engineering, Zhejiang University (2020)</li>
+                        <li><strong>Outstanding Graduate Student</strong> - Zhejiang University (2018, 2019)</li>
+                        <li><strong>Outstanding Graduate</strong> - Zhejiang University (2020)</li>
+                        <li><strong>Outstanding Graduate</strong> - Donghua University (2017)</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <h3 style="color: #2980b9; margin-top: 0;">👥 Leadership & Service</h3>
+                    <ul>
+                        <li><strong>Student Leader</strong> - Mechanical Engineering Female Graduate Students Association, Texas A&M University</li>
+                        <li><strong>Graduate Student Ambassador</strong> - J. Mike Walker '66 Department of Mechanical Engineering, Texas A&M University</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- CONTACT PAGE -->
+            <div id="contact" class="page">
+                <h2>Get In Touch</h2>
+                <p style="font-size: 1.1em; margin-bottom: 30px; color: #555;">
+                    I'm always interested in collaborating on innovative AI research projects, discussing opportunities in Generative AI and LLMs, or exploring partnerships in education technology. Feel free to reach out!
+                </p>
+                
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">📧</div>
+                        <h3>Email</h3>
+                        <a href="mailto:grj1214@tamu.edu">grj1214@tamu.edu</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">📱</div>
+                        <h3>Phone</h3>
+                        <a href="tel:+19793213135">+1 (979) 321-3135</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <h3>Location</h3>
+                        <p style="color: #555;">College Station, TX 77840<br>United States</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">💼</div>
+                        <h3>LinkedIn</h3>
+                        <a href="https://www.linkedin.com/in/rujun-gao" target="_blank">linkedin.com/in/rujun-gao</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">🎓</div>
+                        <h3>Google Scholar</h3>
+                        <a href="https://scholar.google.com" target="_blank">View Publications</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">💻</div>
+                        <h3>GitHub</h3>
+                        <a href="https://github.com/rujungao" target="_blank">github.com/rujungao</a>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 50px; padding: 30px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #3498db;">
+                    <h3 style="color: #2c3e50; margin-bottom: 15px;">🚀 Encando.AI</h3>
+                    <p style="color: #555; margin-bottom: 10px;">
+                        Interested in learning more about our AI-powered education platform? Visit us at:
+                    </p>
+                    <a href="https://www.encando.ai" target="_blank" style="color: #3498db; font-size: 1.1em; font-weight: bold;">www.encando.ai</a>
+                </div>
+                
+                <div class="update-note">
+                    Updated November 2025
+                </div>
+            </div>
+        </main>
     </div>
-  </header>
-
-  <!-- 头部信息 -->
-  <section class="max-w-5xl mx-auto px-4 py-10 md:py-14">
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="md:col-span-2">
-        <h1 class="text-3xl md:text-5xl font-bold tracking-tight">Rujun (Rhea) Gao</h1>
-        <p class="mt-3 text-gray-700">GAI / LLM / NLP / Machine Learning / Deep Learning / Data Analyst</p>
-        <div class="mt-4 flex flex-wrap gap-2 text-sm">
-          <span class="inline-block rounded-full border px-3 py-1">College Station, TX 77840</span>
-          <a class="inline-block rounded-full border px-3 py-1 hover:bg-gray-50" target="_blank" href="https://www.linkedin.com/in/rujun-gao-00740a221/">LinkedIn</a>
-          <a class="inline-block rounded-full border px-3 py-1 hover:bg-gray-50" target="_blank" href="https://scholar.google.com/citations?user=itvDIHoAAAAJ&hl=en&oi=ao">Google Scholar</a>
-          <a class="inline-block rounded-full border px-3 py-1 hover:bg-gray-50" target="_blank" href="https://github.com/RJ-Heisenberg">GitHub</a>
-          <a class="inline-block rounded-full border px-3 py-1 hover:bg-gray-50" target="_blank" href="http://www.encando.ai/">Encando.ai</a>
-        </div>
-      </div>
-      <div class="bg-gray-50 border rounded-xl p-4">
-        <div class="text-sm text-gray-600">Get in touch</div>
-        <a class="block text-lg font-medium hover:underline" href="mailto:grj1214@tamu.edu">grj1214@tamu.edu</a>
-        <a class="block text-lg font-medium hover:underline" href="tel:+19793213135">+1 (979) 321-3135</a>
-        <a class="mt-2 inline-block underline" href="resume.pdf" download>Download Resume (PDF)</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="max-w-5xl mx-auto px-4 pb-10">
-    <h2 class="text-2xl md:text-3xl font-semibold mb-4">About</h2>
-    <ul class="list-disc pl-5 space-y-2 text-sm md:text-base leading-relaxed">
-      <li>Self-starter who drives large-scale AI projects from 0→1, combining research insight with execution excellence.</li>
-      <li>Fast learner applying state-of-the-art Generative AI, LLMs, Agents, and ML to deliver scalable solutions.</li>
-      <li>Experienced researcher in AI system design, implementation, testing, launch, and maintenance.</li>
-      <li>Team lead who motivates cross-functional teams and consistently achieves ambitious goals.</li>
-    </ul>
-  </section>
-
-  <!-- Experience -->
-  <section id="experience" class="max-w-5xl mx-auto px-4 pb-10">
-    <h2 class="text-2xl md:text-3xl font-semibold mb-4">Experience</h2>
-    <div class="space-y-6">
-      <div class="rounded-xl border p-4">
-        <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-          <div class="font-medium">Encando.AI (Co-founder) — AI-powered Higher-Education SaaS Platform</div>
-          <div class="text-gray-600">— CEO & CTO</div>
-          <div class="ml-auto text-sm text-gray-500">Remote · 02/2025–Present</div>
-        </div>
-        <ul class="list-disc pl-5 mt-3 space-y-2 text-sm md:text-base leading-relaxed">
-          <li>Led end-to-end development (RAG, multi-agent, context-aware LLM apps) for content generation, grading, tutoring.</li>
-          <li>Deployed scalable ML systems (LLMs, LangChain, vector DBs) on AWS for semantic search & adaptive feedback.</li>
-          <li>Built FastAPI services connecting RAG pipelines with Canvas LTI UI; ensured FERPA & TX-RAMP compliance.</li>
-          <li>Launched across multiple universities (TAMU, Texas Tech, UNT, UT Austin), serving 2,000+ users.</li>
-          <li>Drove evaluation, fine-tuning, prompt engineering (GPT, Claude, Gemini), improving grading efficiency by 40%.</li>
-        </ul>
-      </div>
-
-      <div class="rounded-xl border p-4">
-        <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-          <div class="font-medium">Aira Technologies (Startup)</div>
-          <div class="text-gray-600">— LLM Researcher, R&D, Co-op</div>
-          <div class="ml-auto text-sm text-gray-500">Silicon Valley, US · 12/2023–05/2024</div>
-        </div>
-        <ul class="list-disc pl-5 mt-3 space-y-2">
-          <li>R&D on LLM-based applications in wireless communications; function-calling agents, RAG pipelines, fine-tuning.</li>
-        </ul>
-      </div>
-
-      <div class="rounded-xl border p-4">
-        <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-          <div class="font-medium">Institute of Automation, Chinese Academy of Sciences</div>
-          <div class="text-gray-600">— Research Intern (Summer)</div>
-          <div class="ml-auto text-sm text-gray-500">Beijing, China · 07/2016–09/2016</div>
-        </div>
-        <ul class="list-disc pl-5 mt-3 space-y-2">
-          <li>Studied intelligent social-media recommender algorithms; incorporated social-network signals; model comparisons.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Research / Projects -->
-  <section id="research" class="max-w-5xl mx-auto px-4 pb-10">
-    <h2 class="text-2xl md:text-3xl font-semibold mb-4">Research & Projects</h2>
-    <div class="space-y-6">
-      <div class="rounded-xl border p-4">
-        <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-          <div class="font-medium">GAI & LLM Strategies for Automatic Assessment (Ph.D. Thesis)</div>
-          <div class="ml-auto text-sm text-gray-500">08/2021–05/2025</div>
-        </div>
-        <ul class="list-disc pl-5 mt-3 space-y-2">
-          <li>Automated grading of open-ended engineering questions using transformer-based LLMs.</li>
-          <li>Built auto-tutoring platform (RAG + Agent) for 24/7 learning; filed 4 US patents; deployed at Texas A&M.</li>
-          <li>Systematic review of 1,000+ AI-in-Education papers; hands-on with BERT/GPT, PyTorch, TensorFlow.</li>
-        </ul>
-      </div>
-
-      <div class="rounded-xl border p-4">
-        <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-          <div class="font-medium">GAI-powered ADU Planner</div>
-          <div class="ml-auto text-sm text-gray-500">02/2024</div>
-        </div>
-        <ul class="list-disc pl-5 mt-3 space-y-2">
-          <li>Input an address to get an ADU plan aligned with local policy; suggests suppliers, floorplans, renderings.</li>
-        </ul>
-      </div>
-
-      <div class="rounded-xl border p-4">
-        <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-          <div class="font-medium">LLM-Powered Teaching Assistant Agent (ChaTA)</div>
-          <div class="ml-auto text-sm text-gray-500">06/2023–07/2023</div>
-        </div>
-        <ul class="list-disc pl-5 mt-3 space-y-2">
-          <li>Fine-tuned LLaMA-2 on 10k Q&A; augmented with retrieval over a custom course knowledge base.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Publications -->
-  <section id="publications" class="max-w-5xl mx-auto px-4 pb-10">
-    <h2 class="text-2xl md:text-3xl font-semibold mb-4">Selected Publications</h2>
-    <ol class="list-decimal pl-6 space-y-2 text-sm md:text-base">
-      <li>Gao, R., Merzdorf, H.E., Anwar, S., Hipwell, M.C., & Srinivasa, A.R. (2024). Automatic assessment of text-based responses in post-secondary education: A systematic review. <i>Computers and Education: Artificial Intelligence</i>, 6, 100206.</li>
-      <li>Zhang, J., Chen, J., Gao, R., Ma, R., et al. (2019). Research on Modification Algorithms of Cylindrical External Thread Profile Based on Machine Vision. <i>Measurement Science Review</i>.</li>
-      <li>Gao, R., Guo, X., Li, X., Narayanan, A.B., Thomas, N., & Srinivasa, A.R. (2024). Towards Scalable Automated Grading… NeurIPS FM-EduAssess 2024 (accepted).</li>
-      <li>Li, X., Li, D., Gao, R., Zamani, M., & Khan, L. (2025). LSEBMCL: A Latent Space Energy-Based Model for Continual Learning. ICAIIC 2025 (accepted). arXiv:2501.05495.</li>
-      <li>Gao, R., Thomas, N., & Srinivasa, A. (2023). Work in Progress: LLM-Based Automatic Grading Study. IEEE FIE 2023.</li>
-      <li>Gao, R. (2018). Intelligent Material Transportation System Design for Small and Medium-Sized Plants. IHSED 2018.</li>
-    </ol>
-  </section>
-
-  <!-- Patents -->
-  <section id="patents" class="max-w-5xl mx-auto px-4 pb-10">
-    <h2 class="text-2xl md:text-3xl font-semibold mb-4">Patents</h2>
-    <ul class="list-disc pl-5 space-y-2">
-      <li>An Inflatable Fragile Packing Machine (CN106428733A)</li>
-      <li>An Inflation Device for Inflatable Bags Inside Corrugated Box (CN107031122A)</li>
-      <li>Intelligent Material Transportation System (CN207209125U)</li>
-      <li>A Joint Design for Industrial Polishing Robot (CN110509309A)</li>
-      <li>A Complex Surface Polishing Device (CN110450028A)</li>
-      <li>A Two-Dimensional Valve Swing and Waving Device (CN210218281U)</li>
-      <li>A Switching Structure for two-degree-of-freedom rotating valve (CN110296118A)</li>
-      <li>A Double-Motor Based Flow Control and High-Speed Switch Valve (CN110319067A)</li>
-    </ul>
-  </section>
-
-  <!-- Education -->
-  <section id="education" class="max-w-5xl mx-auto px-4 pb-10">
-    <h2 class="text-2xl md:text-3xl font-semibold mb-4">Education</h2>
-    <div class="grid md:grid-cols-2 gap-4">
-      <div class="rounded-xl border p-4">
-        <div class="font-medium">Ph.D. in Generative AI Research (GPA 3.5)</div>
-        <div class="text-gray-600">Texas A&M University — College Station, TX, USA</div>
-        <div class="text-sm text-gray-500">08/2020–05/2025</div>
-        <ul class="list-disc pl-5 mt-2 space-y-1 text-sm">
-          <li>Dissertation: Generative AI & LLM-based Automatic Assessment Study in Engineering</li>
-        </ul>
-      </div>
-      <div class="rounded-xl border p-4">
-        <div class="font-medium">M.S. in Mechatronic Engineering (GPA 3.8)</div>
-        <div class="text-gray-600">Zhejiang University — Hangzhou, China</div>
-        <div class="text-sm text-gray-500">09/2017–06/2020</div>
-        <div class="mt-1 text-sm">🏅 Outstanding Graduate</div>
-      </div>
-      <div class="rounded-xl border p-4">
-        <div class="font-medium">Exchange Student in Computer Science (GPA 4.0)</div>
-        <div class="text-gray-600">National Tsing Hua University — Hsinchu, Taiwan</div>
-        <div class="text-sm text-gray-500">02/2018–06/2018</div>
-      </div>
-      <div class="rounded-xl border p-4">
-        <div class="font-medium">B.S., Hons in Mechanical Engineering (GPA 3.7)</div>
-        <div class="text-gray-600">Donghua University — Shanghai, China</div>
-        <div class="text-sm text-gray-500">09/2013–06/2017</div>
-        <div class="mt-1 text-sm">🏅 Outstanding Graduate</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills" class="max-w-5xl mx-auto px-4 pb-10">
-    <h2 class="text-2xl md:text-3xl font-semibold mb-4">Skills</h2>
-    <div class="space-y-3 text-sm md:text-base">
-      <div><span class="font-medium">Programming:</span> Python, MATLAB, C/C++</div>
-      <div><span class="font-medium">Frameworks/Platforms:</span> PyTorch, TensorFlow, GPT-4o/GPT-5, AWS, FAISS, LangChain, LlamaIndex</div>
-      <div><span class="font-medium">Focus:</span> NLP, RAG, In-Context Learning, Prompt Engineering, LLM Agents, Fine-tuning, RL, Deep Learning, SQL, Stats, Optimization, Info Theory</div>
-      <div><span class="font-medium">Languages:</span> Chinese (native), English (professional)</div>
-    </div>
-  </section>
-
-  <!-- Awards -->
-  <section id="awards" class="max-w-5xl mx-auto px-4 pb-10">
-    <h2 class="text-2xl md:text-3xl font-semibold mb-4">Leadership & Awards</h2>
-    <ul class="list-disc pl-5 space-y-2">
-      <li>Student Leader – Mechanical Engineering Female Graduate Students Association (TAMU)</li>
-      <li>Graduate Student Ambassador – J. Mike Walker ’66 Department of Mechanical Engineering</li>
-      <li>MEEN Graduate Travel Award (06/2022, 06/2023)</li>
-      <li>J George H Thompson Grad Fellowship, Texas A&M (06/2022, 06/2023)</li>
-      <li>Mr and Mrs Gray Fellowship, Texas A&M (06/2021)</li>
-      <li>Top 10 Excellent Student – School of ME, Zhejiang University (05/2020)</li>
-      <li>Outstanding Graduate Student – Zhejiang University (2018, 2019)</li>
-      <li>Second Prize – Shanghai Mechanical Engineering Innovation Competition (Team Lead, 05/2016)</li>
-    </ul>
-  </section>
-
-  <!-- 联系 -->
-  <section id="contact" class="max-w-5xl mx-auto px-4 pb-16">
-    <h2 class="text-2xl md:text-3xl font-semibold mb-4">Contact</h2>
-    <div class="rounded-xl border p-4 grid md:grid-cols-3 gap-4">
-      <div>
-        <div class="text-gray-600">Email</div>
-        <a class="font-medium underline" href="mailto:grj1214@tamu.edu">grj1214@tamu.edu</a>
-      </div>
-      <div>
-        <div class="text-gray-600">Phone</div>
-        <a class="font-medium underline" href="tel:+19793213135">+1 (979) 321-3135</a>
-      </div>
-      <div>
-        <div class="text-gray-600">Links</div>
-        <div class="flex flex-wrap gap-2 mt-1">
-          <a class="underline" target="_blank" href="https://github.com/RJ-Heisenberg">GitHub</a>
-          <a class="underline" target="_blank" href="https://www.linkedin.com/in/rujun-gao-00740a221/">LinkedIn</a>
-          <a class="underline" target="_blank" href="https://scholar.google.com/citations?user=itvDIHoAAAAJ&hl=en&oi=ao">Google Scholar</a>
-          <a class="underline" target="_blank" href="http://www.encando.ai/">Encando.ai</a>
-          <a class="underline" href="resume.pdf">Resume PDF</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="border-t">
-    <div class="max-w-5xl mx-auto px-4 py-8 text-sm text-gray-600">
-      © <span id="year"></span> Rujun (Rhea) Gao
-    </div>
-  </footer>
-
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update navigation active state
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+    </script>
 </body>
 </html>
